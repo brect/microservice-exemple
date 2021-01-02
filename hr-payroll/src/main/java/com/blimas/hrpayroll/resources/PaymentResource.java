@@ -14,8 +14,12 @@ import java.util.UUID;
 @RequestMapping(value = "/payments")
 public class PaymentResource {
 
-    private PaymentService service;
+    private final PaymentService service;
 
+    public PaymentResource(PaymentService service) {
+        this.service = service;
+    }
+    
     @GetMapping(value = "/{workerId}/days/{days}")
     public ResponseEntity<Payment> getPayment(@PathVariable UUID workerId,
                                               @PathVariable Integer days) {
