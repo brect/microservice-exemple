@@ -25,8 +25,8 @@ public class WorkerResource {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Worker> findById(@PathVariable String id) {
-        Worker worker = repository.findById(UUID.fromString(id)).orElseThrow();
+    public ResponseEntity<Worker> findById(@PathVariable UUID id) {
+        Worker worker = repository.findById(id).orElseThrow();
         return ResponseEntity.ok(worker);
     }
 

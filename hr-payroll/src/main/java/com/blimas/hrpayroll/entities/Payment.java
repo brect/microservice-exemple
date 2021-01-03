@@ -2,6 +2,7 @@ package com.blimas.hrpayroll.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Data
@@ -13,7 +14,7 @@ public class Payment {
     private Double dailyIncome;
     private Integer days;
 
-    private double getTotal(){
-        return dailyIncome * days;
+    public double getTotal() {
+        return days * dailyIncome;
     }
 }
