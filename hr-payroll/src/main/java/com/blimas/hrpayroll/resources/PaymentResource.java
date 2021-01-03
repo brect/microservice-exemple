@@ -30,8 +30,8 @@ public class PaymentResource {
         return ResponseEntity.ok(payment);
     }
 
-    public ResponseEntity<?> getPaymentAlternative(@PathVariable UUID workerId,
-                                              @PathVariable Integer days) {
-        return ResponseEntity.ok("Deu ruim");
+    public ResponseEntity<Payment> getPaymentAlternative(UUID workerId,
+                                              Integer days) {
+        return ResponseEntity.ok(new Payment());
     }
 }
