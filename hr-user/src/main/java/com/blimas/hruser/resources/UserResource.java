@@ -42,7 +42,7 @@ public class UserResource {
 
     @PostMapping
     public ResponseEntity<User> createWorker(@RequestBody User request) {
-        User user =repository.save(request);
+        User user = repository.save(request);
         return ResponseEntity.ok(user);
     }
 }
