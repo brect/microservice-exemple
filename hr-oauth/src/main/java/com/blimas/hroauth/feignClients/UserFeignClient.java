@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "hr-user", path = "/users")
 public interface UserFeignClient {
 
-    @GetMapping("/search")
-    ResponseEntity<User> findByEmail(@RequestParam String request);
-
-
+    @GetMapping(value = "/search")
+    ResponseEntity<User> findByEmail(@RequestParam String email);
 }

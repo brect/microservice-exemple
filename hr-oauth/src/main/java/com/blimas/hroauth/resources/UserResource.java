@@ -14,21 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/users")
 public class UserResource {
 
-    private final UserService service;
+    @Autowired
+    private UserService service;
 
-    public UserResource(UserService service) {
-        this.service = service;
-    }
-
-    @GetMapping("/search")
-    public ResponseEntity<User> findByEmail(@RequestParam String request) {
+    @GetMapping(value = "/search")
+    public ResponseEntity<User> findByEmail(@RequestParam String email) {
         try {
-            User user = service.findByEmail(request);
+            User user = (User) service.loadUserByUsername(email);
             return ResponseEntity.ok(user);
-        }catch (IllegalArgumentException e){
+        }
+        catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-
     }
-
 }
