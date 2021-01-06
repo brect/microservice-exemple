@@ -5,8 +5,9 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.1</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.3.4.RELEASE</version>
+        <relativePath/>
+        <!--  lookup parent from repository  -->
     </parent>
     <groupId>com.blimas</groupId>
     <artifactId>hr-oauth</artifactId>
